@@ -78,6 +78,7 @@
                             <constraint firstItem="ZDH-Ni-cMU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z3h-YJ-OJc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="y3g-D1-IZO"/>
                     <connections>
                         <outlet property="emailTextField" destination="f3u-Ej-w4X" id="LYl-1T-kFU"/>
                         <outlet property="passwordTextField" destination="37k-8y-qVR" id="4bn-4p-EeD"/>
@@ -95,14 +96,54 @@
                     <view key="view" contentMode="scaleToFill" id="BcK-Ms-8xQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clickforpick" translatesAutoresizingMaskIntoConstraints="NO" id="BSc-91-BRf">
+                                <rect key="frame" x="37" y="98" width="319" height="250"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bga-xU-hDV">
+                                <rect key="frame" x="37" y="370" width="319" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="HFQ-Z9-F0V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Sj-I5-Mzg">
+                                <rect key="frame" x="151" y="424" width="90" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="akI-ZV-Ejf"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Upload"/>
+                                <connections>
+                                    <action selector="uploadButtonClicked:" destination="Sdh-Ex-KDg" eventType="touchUpInside" id="eIB-PP-8Lt"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9Bn-1G-PeJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Bn-1G-PeJ" firstAttribute="bottom" secondItem="1Sj-I5-Mzg" secondAttribute="bottom" constant="310" id="8lu-mK-i1I"/>
+                            <constraint firstItem="BSc-91-BRf" firstAttribute="trailing" secondItem="bga-xU-hDV" secondAttribute="trailing" id="Cog-GR-mYr"/>
+                            <constraint firstItem="bga-xU-hDV" firstAttribute="centerX" secondItem="1Sj-I5-Mzg" secondAttribute="centerX" id="EMT-xp-pez"/>
+                            <constraint firstItem="1Sj-I5-Mzg" firstAttribute="leading" secondItem="9Bn-1G-PeJ" secondAttribute="leading" constant="151" id="kD6-DW-Gg6"/>
+                            <constraint firstItem="bga-xU-hDV" firstAttribute="top" secondItem="BSc-91-BRf" secondAttribute="bottom" constant="22" id="o3H-aM-SbM"/>
+                            <constraint firstItem="BSc-91-BRf" firstAttribute="top" secondItem="9Bn-1G-PeJ" secondAttribute="top" constant="39" id="o7V-fW-FQq"/>
+                            <constraint firstItem="BSc-91-BRf" firstAttribute="leading" secondItem="9Bn-1G-PeJ" secondAttribute="leading" constant="37" id="ooG-Fc-Bas"/>
+                            <constraint firstItem="1Sj-I5-Mzg" firstAttribute="centerX" secondItem="BcK-Ms-8xQ" secondAttribute="centerX" id="rwU-gP-1dz"/>
+                            <constraint firstItem="BSc-91-BRf" firstAttribute="leading" secondItem="bga-xU-hDV" secondAttribute="leading" id="tMn-j4-NWs"/>
+                            <constraint firstItem="1Sj-I5-Mzg" firstAttribute="top" secondItem="bga-xU-hDV" secondAttribute="bottom" constant="20" id="wKc-V4-pJs"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" image="square.and.arrow.up" catalog="system" id="3sw-Xd-B9m"/>
+                    <connections>
+                        <outlet property="commentTextField" destination="BSc-91-BRf" id="o8b-cZ-R61"/>
+                        <outlet property="imageView" destination="BSc-91-BRf" id="C7G-tC-RBD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vou-KV-gyk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1882" y="4"/>
+            <point key="canvasLocation" x="1881.679389312977" y="3.5211267605633805"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Yh5-L1-JnO">
@@ -111,10 +152,29 @@
                     <view key="view" contentMode="scaleToFill" id="lbU-e4-KXf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xc2-Qf-dNd">
+                                <rect key="frame" x="151" y="409" width="90" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Log Out"/>
+                                <connections>
+                                    <action selector="logoutButtonClicked:" destination="RHB-Q2-JUH" eventType="touchUpInside" id="5nj-nU-EPI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nFq-3L-wow"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xc2-Qf-dNd" firstAttribute="centerX" secondItem="lbU-e4-KXf" secondAttribute="centerX" id="9dR-BC-EgC"/>
+                            <constraint firstItem="Xc2-Qf-dNd" firstAttribute="leading" secondItem="nFq-3L-wow" secondAttribute="leading" constant="151" id="Pnu-aS-yYH"/>
+                            <constraint firstItem="Xc2-Qf-dNd" firstAttribute="centerY" secondItem="lbU-e4-KXf" secondAttribute="centerY" id="YMy-eK-ZDc"/>
+                            <constraint firstItem="Xc2-Qf-dNd" firstAttribute="top" secondItem="nFq-3L-wow" secondAttribute="top" constant="350" id="pxQ-q3-Zzi"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="EtI-Q5-j0j"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toViewController" modalPresentationStyle="fullScreen" id="Mfj-3a-JXX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAY-iX-Hzz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -139,7 +199,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="lOA-x2-ejQ">
             <objects>
-                <tabBarController id="Z2v-30-teW" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="Z2v-30-teW" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="oRp-9h-Y3R"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wdH-o6-drt">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -158,6 +218,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clickforpick" width="2765" height="1525"/>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
