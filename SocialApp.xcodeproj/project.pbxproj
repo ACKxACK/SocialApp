@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1C46C629C31EE8001C5483 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1C46C529C31EE8001C5483 /* FeedCell.swift */; };
 		3AB339E129C1C15800021A47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB339E029C1C15800021A47 /* AppDelegate.swift */; };
 		3AB339E329C1C15800021A47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB339E229C1C15800021A47 /* SceneDelegate.swift */; };
 		3AB339E529C1C15800021A47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB339E429C1C15800021A47 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1C46C529C31EE8001C5483 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		3AB339DD29C1C15800021A47 /* SocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB339E029C1C15800021A47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AB339E229C1C15800021A47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				3AB339F629C1CBEE00021A47 /* FeedViewController.swift */,
 				3AB339F829C1CC0900021A47 /* UploadViewController.swift */,
 				3AB339FA29C1CC1C00021A47 /* SettingsViewController.swift */,
+				3A1C46C529C31EE8001C5483 /* FeedCell.swift */,
 				3AB339E629C1C15800021A47 /* Main.storyboard */,
 				3AB339E929C1C15900021A47 /* Assets.xcassets */,
 				3AB339EB29C1C15900021A47 /* LaunchScreen.storyboard */,
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1C46C629C31EE8001C5483 /* FeedCell.swift in Sources */,
 				3AB339E529C1C15800021A47 /* ViewController.swift in Sources */,
 				3AB339F929C1CC0900021A47 /* UploadViewController.swift in Sources */,
 				3AB339E129C1C15800021A47 /* AppDelegate.swift in Sources */,

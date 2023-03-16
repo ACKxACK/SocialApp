@@ -14,7 +14,7 @@ import FirebaseStorage
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var commentTextField: UIImageView!
+    @IBOutlet weak var commentTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         let mediaFolder = storageReference.child("Media")
         
-        if let data = imageView.image?.jpegData(compressionQuality: 0.5) {
+        if let data = imageView.image?.jpegData(compressionQuality: 0.2) {
             
             //Create and UUIDString for image names
             let uuid = UUID().uuidString
@@ -63,8 +63,24 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                         if error == nil {
                             let imageUrl = url?.absoluteString
                             
-                            
-                            
+                            if let imageUrl = imageUrl {
+                                
+                                //Create Database
+                                let firestoreDatabase = Firestore.firestore()
+                                let firestorePost = ["imageurl" : imageUrl, "comment" : self.commentTextField.text!, "email" : Auth.auth().currentUser!.email, "date" : FieldValue.serverTimestamp() ] as [String : Any]
+                                
+                                firestoreDatabase.collection("Post").addDocument(data: firestorePost) { error in
+                                    if error != nil {
+                                        self.showErrorMessage(title: "Error!", message: error?.localizedDescription ?? "Error! Please Try Again Later...")
+                                    } else {
+                                        //Database data create then go to Feed Section
+                                        self.imageView.image = UIImage(named: "clickforpick")
+                                        self.commentTextField.text = ""
+                                        self.tabBarController?.selectedIndex = 0 //0-Feed 1-Upload 2-Settings
+                                    }
+                                }
+                                
+                            }
                         }
                     }
                 }
